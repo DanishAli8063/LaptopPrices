@@ -17,7 +17,7 @@ DATA_FILE = BASE_DIR / "data" / "laptops.json"
 app = FastAPI(title="Laptop Dashboard (JSON-based)")
 
 # Static + Templates
-app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+app.mount("/static", StaticFiles(...), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 
