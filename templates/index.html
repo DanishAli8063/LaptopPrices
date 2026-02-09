@@ -26,45 +26,7 @@
           <div class="flex-grow-1">
             <div class="price">Rs {{ "{:,}".format(x.price) }}</div>
             <div class="name">{{ x.name }}</div>
-            <div class="name">{{ x.{% extends "base.html" %}
-{% block title %}Laptops{% endblock %}
-
-{% block content %}
-
-  <div class="d-flex flex-column flex-md-row gap-2 align-items-md-end justify-content-between mb-3">
-
-
-
-  </div>
-
-  {% if items|length == 0 %}
-    <div class="alert alert-light border">
-      No laptops found in this range.
-    </div>
-  {% endif %}
-
-  <div class="list-group list-group-flush gap-2">
-    {% for x in items %}
-      <a class="list-group-item laptop-card" href="/product/{{ x.id }}">
-        <div class="d-flex gap-3 align-items-center">
-          <div class="thumb-wrap">
-            <img class="thumb" src="{{ x.pic_urls[0] }}" alt="{{ x.name }}" />
-          </div>
-
-          <div class="flex-grow-1">
-            <div class="price">Rs {{ "{:,}".format(x.price) }}</div>
-            <div class="name">{{ x.name }}</div>
             <div class="name">{{ x.generation }}</div>
-          </div>
-
-          <div class="chev">›</div>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-
-{% endblock %}
- }}</div>
           </div>
 
           <div class="chev">›</div>
