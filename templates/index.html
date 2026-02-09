@@ -3,25 +3,6 @@
 
 {% block content %}
 
-  <!-- Top header / filter info -->
-  <div class="page-head mb-3">
-    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-      <div>
-        <h4 class="page-title mb-1">Available Laptops</h4>
-        <div class="page-sub">
-          Share links like:
-          <span class="mono">/?min=50&amp;max=60</span>
-          <span class="dot">•</span>
-          <span class="muted">50 means 50,000</span>
-        </div>
-      </div>
-
-      <!-- OPTIONAL: keep empty for now or add search later -->
-      <div class="page-badge">
-        Total: <span class="fw-bold">{{ items|length }}</span>
-      </div>
-    </div>
-  </div>
 
   {% if items|length == 0 %}
     <div class="alert alert-light border">
