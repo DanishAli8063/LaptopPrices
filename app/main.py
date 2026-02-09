@@ -16,7 +16,6 @@ DATA_FILE = BASE_DIR / "data" / "laptops.json"
 app = FastAPI(title="Laptop Dashboard (JSON-based)")
 
 # Static + Templates
-
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 
@@ -115,15 +114,25 @@ def load_laptops() -> List[Dict[str, Any]]:
         # stable id (unique even if same name)
         item_id = f"{slugify(name)}-{idx+1}"
 
-        items.append(
-            {
-                "id": item_id,
-                "name": name,
-                "price": price,
-                "pics": pics,
-                "description": desc,
-            }
-        )
+        generation = str(row.get("generation", "Unknown")).strip() or "Unknown"
+        specs = str(row.get("specs", "Unknown")).strip() or "Unknown"
+        screen_size = str(row.get("screen_size", "Unknown")).strip() or "Unknown"
+        screen_resolution = str(row.get("screen_resolution", "Unknown")).strip() or "Unknown"
+        cpu_cores = str(row.get("cpu_cores", "Unknown")).strip() or "Unknown"
+
+        items.append({
+        "id": item_id,
+        "name": name,
+        "price": price,
+        "pics": pics,
+        "description": desc,
+        "generation": generation,
+        "specs": specs,
+        "screen_size": screen_size,
+        "screen_resolution": screen_resolution,
+        "cpu_cores": cpu_cores,
+        })
+
 
     # sort by price (low to high)
     items.sort(key=lambda x: x["price"])
