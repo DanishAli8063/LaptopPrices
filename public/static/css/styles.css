@@ -106,19 +106,23 @@
 
 /* Product carousel container: take most of screen height */
 .product-media{
+  height: calc(100vh - 220px);   /* screen height minus navbar + margins */
+  min-height: 320px;
+  max-height: 780px;
   background: #f9fafb;
-  border-radius: 16px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Image: ALWAYS show full (no crop) */
 .product-img{
   width: 100%;
-  height: auto;                 /* ✅ natural full image */
-  max-height: calc(100vh - 220px);
-  object-fit: contain;
-  display: block;
+  height: 100%;
+  object-fit: contain;           /* ✅ full visible */
   background: #f9fafb;
 }
+
 
 
 /* Desktop (lg+): show full image (no crop) */
