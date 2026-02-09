@@ -1,13 +1,47 @@
+/* =========================
+   GLOBAL THEME (WHITE)
+   ========================= */
 :root{
   --bg: #f3f4f6;
   --card: #ffffff;
-  --muted:#6b7280;
-  --text:#111827;
+  --text: #111827;
+  --muted: #6b7280;
   --border: rgba(17,24,39,0.12);
+  --shadow: 0 10px 24px rgba(0,0,0,0.06);
+  --radius: 16px;
 }
 
-.bg-app{
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
   background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-app{ background: var(--bg); }
+
+/* Slightly nicer container on large screens */
+.container{
+  max-width: 1200px;
+}
+
+/* Links */
+a{ color: inherit; }
+a:hover{ text-decoration: none; }
+
+/* =========================
+   CARDS / COMMON
+   ========================= */
+.card-app{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
 
 .card-filter{
@@ -16,6 +50,14 @@
   border-radius: 14px;
 }
 
+/* Typography helpers */
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* =========================
+   INDEX PAGE LIST ITEM CARD
+   ========================= */
 .laptop-card{
   background: var(--card);
   border: 1px solid var(--border) !important;
@@ -23,12 +65,13 @@
   padding: 12px !important;
   color: var(--text);
   text-decoration: none;
-  transition: transform .08s ease, box-shadow .08s ease;
+  transition: transform .10s ease, box-shadow .10s ease, border-color .10s ease;
 }
 
 .laptop-card:hover{
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
+  border-color: rgba(17,24,39,0.18) !important;
 }
 
 .thumb-wrap{
@@ -45,6 +88,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .price{
@@ -55,7 +99,8 @@
 }
 
 .price.big{
-  font-size: 26px;
+  font-size: 28px;
+  letter-spacing: -0.3px;
 }
 
 .name{
@@ -70,12 +115,95 @@
   padding-left: 6px;
 }
 
-.card-app{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+/* =========================
+   PRODUCT PAGE (CAROUSEL)
+   ========================= */
+
+/* Make carousel usable + stable height across screens */
+.product-media{
+  /* Mobile default: nice big view */
+  height: 48vh;
+  min-height: 320px;
+  max-height: 640px;
+
+  background: #f9fafb;
+  border-radius: var(--radius);
 }
 
+/* Ensure carousel fills the container */
+.product-media .carousel-inner,
+.product-media .carousel-item{
+  height: 100%;
+}
+
+/* Make each slide a "canvas" that can show blur background + centered image */
+.product-media .carousel-item{
+  position: relative;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- BLUR BACKGROUND FILL ---
+   For this to work perfectly, each carousel-item should have:
+   class="carousel-item slide-bg" and style="--bg:url('...')"
+   (If you already added that earlier, you're good.)
+*/
+.slide-bg::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px);
+  transform: scale(1.15);
+  opacity: 0.28;
+}
+
+/* The actual product image */
+.product-img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  border-radius: 12px;
+  object-position: center;
+}
+
+/* Mobile: fill nicely (looks best on small screens) */
+@media (max-width: 767.98px){
+  .product-img{
+    object-fit: cover;   /* mobile "good look" */
+  }
+}
+
+/* Tablet/Laptop/Desktop: show full image (no crop) + blur fill */
+@media (min-width: 768px){
+  .product-media{
+    height: calc(100vh - 220px);
+    min-height: 420px;
+    max-height: 760px;
+  }
+
+  .product-img{
+    object-fit: contain; /* desktop full visible */
+  }
+}
+
+/* Carousel arrows visible on white theme */
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  filter: invert(1) grayscale(1);
+  opacity: 0.9;
+}
+
+/* =========================
+   PRODUCT PAGE (SPECS BOX)
+   ========================= */
 .spec-box{
   background: #f9fafb;
   border: 1px solid var(--border);
@@ -88,9 +216,42 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .08em;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
+.spec-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+}
+
+.spec-row:last-child{
+  border-bottom: 0;
+  padding-bottom: 4px;
+}
+
+.spec-k{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.spec-v{
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: right;
+}
+
+.desc-text{
+  color: var(--text);
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Old pre style (if still used anywhere) */
 .spec-text{
   margin: 0;
   color: var(--text);
@@ -100,66 +261,13 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.mono{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+/* =========================
+   SMALL POLISH
+   ========================= */
+.btn{
+  border-radius: 12px;
 }
 
-/* Product carousel container: take most of screen height */
-.product-media{
-  height: calc(100vh - 220px);   /* screen height minus navbar + margins */
-  min-height: 320px;
-  max-height: 780px;
-  background: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Image: ALWAYS show full (no crop) */
-.product-img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;           /* ✅ full visible */
-  background: #f9fafb;
-}
-
-
-
-/* Desktop (lg+): show full image (no crop) */
-@media (min-width: 992px){
-  .product-media{ height: 520px; }   /* bigger on laptop */
-  .product-img{ object-fit: contain; }
-}
-
-/* Carousel arrows visible on white */
-.carousel-control-prev-icon,
-.carousel-control-next-icon{
-  filter: invert(1) grayscale(1);
-}
-
-/* Specs rows (nice clean list) */
-.spec-row{
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(17,24,39,0.08);
-}
-.spec-row:last-child{ border-bottom: 0; }
-
-.spec-k{
-  color: #6b7280;
-  font-size: 13px;
-}
-.spec-v{
-  color: #111827;
-  font-weight: 600;
-  font-size: 13px;
-  text-align: right;
-}
-
-.desc-text{
-  color: #111827;
-  font-size: 14px;
-  white-space: pre-wrap;
+.alert{
+  border-radius: 14px;
 }
