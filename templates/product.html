@@ -2,13 +2,13 @@
 {% block title %}{{ item.name }}{% endblock %}
 
 {% block content %}
-  <a class="btn btn-outline-light mb-3" href="/">← Back</a>
+  <a class="btn btn-outline-dark mb-3" href="/">← Back</a>
 
   <div class="row g-3">
     <div class="col-12 col-lg-7">
       <div class="card card-app p-3">
         <div id="picsCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner rounded-3 overflow-hidden">
+          <div class="carousel-inner rounded-3 overflow-hidden product-media">
             <div class="carousel-item active">
               <img src="{{ pics[0] }}" class="d-block w-100 product-img" alt="pic1" />
             </div>
@@ -16,6 +16,7 @@
               <img src="{{ pics[1] }}" class="d-block w-100 product-img" alt="pic2" />
             </div>
           </div>
+
           <button class="carousel-control-prev" type="button" data-bs-target="#picsCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -31,11 +32,35 @@
     <div class="col-12 col-lg-5">
       <div class="card card-app p-3">
         <div class="price big">Rs {{ "{:,}".format(item.price) }}</div>
-        <h4 class="text-white mt-1">{{ item.name }}</h4>
+        <h4 class="text-dark mt-2 mb-0">{{ item.name }}</h4>
 
         <div class="spec-box mt-3">
-          <div class="spec-title">Specs / Description</div>
-          <pre class="spec-text">{{ item.description }}</pre>
+          <div class="spec-title">Specs</div>
+
+          <div class="spec-row">
+            <span class="spec-k">Generation</span>
+            <span class="spec-v">{{ item.generation or "Unknown" }}</span>
+          </div>
+
+          <div class="spec-row">
+            <span class="spec-k">RAM / Storage</span>
+            <span class="spec-v">{{ item.specs or "Unknown" }}</span>
+          </div>
+
+          <div class="spec-row">
+            <span class="spec-k">Screen Size</span>
+            <span class="spec-v">{{ item.screen_size or "Unknown" }}</span>
+          </div>
+
+          <div class="spec-row">
+            <span class="spec-k">Resolution</span>
+            <span class="spec-v">{{ item.screen_resolution or "Unknown" }}</span>
+          </div>
+
+          <div class="spec-row">
+            <span class="spec-k">CPU Cores</span>
+            <span class="spec-v">{{ item.cpu_cores or "Unknown" }}</span>
+          </div>
         </div>
       </div>
     </div>
