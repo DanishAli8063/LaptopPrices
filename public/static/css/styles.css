@@ -303,3 +303,66 @@ a:hover{ text-decoration: none; }
   .laptop-name{ font-size: 16px; }
   .card-row{ gap: 12px; }
 }
+/* ===== MOBILE FIXES (CARD LAYOUT) ===== */
+
+/* chips should never break like i3-\n4th */
+.chip{
+  white-space: nowrap;
+  word-break: keep-all;
+  hyphens: none;
+}
+
+/* mobile layout tweaks */
+@media (max-width: 575.98px){
+
+  /* reduce gaps a bit */
+  .card-row{
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* make thumbnail a bit smaller for more text space */
+  .thumb-wrap-lg{
+    width: 92px;
+    height: 74px;
+    border-radius: 12px;
+  }
+
+  /* give more space to name */
+  .card-info{
+    min-width: 0;
+  }
+
+  /* keep name clean (1 line) */
+  .laptop-name{
+    font-size: 16px;
+    -webkit-line-clamp: 1;   /* change to 2 if you want */
+  }
+
+  .meta-line{
+    margin-top: 6px;
+    gap: 6px;
+  }
+
+  /* chips smaller on mobile */
+  .chip{
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  /* price narrower + smaller */
+  .price-block{
+    min-width: auto;
+  }
+
+  .price-lg{
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  /* remove chevron on mobile (frees space a lot) */
+  .chev-lg{
+    display: none;
+  }
+}
+
