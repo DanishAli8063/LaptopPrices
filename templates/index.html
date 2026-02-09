@@ -4,6 +4,7 @@
 {% block content %}
 
 
+
   {% if items|length == 0 %}
     <div class="alert alert-light border">
       No laptops found in this range.
@@ -13,32 +14,30 @@
   <div class="list-group list-group-flush gap-3">
     {% for x in items %}
       <a class="list-group-item laptop-card laptop-card-lg" href="/product/{{ x.id }}">
-        <div class="d-flex gap-3 align-items-center">
+        <div class="card-row">
+          <!-- Left: Image -->
           <div class="thumb-wrap thumb-wrap-lg">
             <img class="thumb" src="{{ x.pic_urls[0] }}" alt="{{ x.name }}" loading="lazy" />
           </div>
 
-          <div class="flex-grow-1">
-            <div class="row g-2 align-items-center">
-              <div class="col-12 col-md-8">
-                <div class="title-line">
-                  <div class="laptop-name">{{ x.name }}</div>
-                </div>
+          <!-- Middle: Name + chips -->
+          <div class="card-info">
+            <div class="laptop-name">{{ x.name }}</div>
 
-                <div class="meta-line">
-                  <span class="chip">{{ x.generation or "Unknown" }}</span>
-                  <span class="chip chip-soft">{{ x.specs or "Unknown" }}</span>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 text-md-end">
-                <div class="price price-lg">Rs {{ "{:,}".format(x.price) }}</div>
-                <div class="muted small">Tap to view details</div>
-              </div>
+            <div class="meta-line">
+              <span class="chip">{{ x.generation or "Unknown" }}</span>
+              <span class="chip chip-soft">{{ x.specs or "Unknown" }}</span>
             </div>
           </div>
 
-          <div class="chev chev-lg">›</div>
+          <!-- Right: Price + chevron -->
+          <div class="card-right">
+            <div class="price-block">
+              <div class="price price-lg">Rs&nbsp;{{ "{:,}".format(x.price) }}</div>
+              <div class="muted small d-none d-md-block">Tap to view details</div>
+            </div>
+            <div class="chev chev-lg">›</div>
+          </div>
         </div>
       </a>
     {% endfor %}
