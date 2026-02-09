@@ -70,12 +70,6 @@
   padding-left: 6px;
 }
 
-.product-img{
-  height: 420px;
-  object-fit: cover;
-  background: #f9fafb;
-}
-
 .card-app{
   background: var(--card);
   border: 1px solid var(--border);
@@ -108,4 +102,57 @@
 
 .mono{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Make carousel height stable */
+.product-media{
+  height: 360px;            /* mobile default */
+  background: #f9fafb;
+}
+
+/* Mobile: keep cover (looks good) */
+.product-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #f9fafb;
+}
+
+/* Desktop (lg+): show full image (no crop) */
+@media (min-width: 992px){
+  .product-media{ height: 520px; }   /* bigger on laptop */
+  .product-img{ object-fit: contain; }
+}
+
+/* Carousel arrows visible on white */
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  filter: invert(1) grayscale(1);
+}
+
+/* Specs rows (nice clean list) */
+.spec-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+}
+.spec-row:last-child{ border-bottom: 0; }
+
+.spec-k{
+  color: #6b7280;
+  font-size: 13px;
+}
+.spec-v{
+  color: #111827;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+}
+
+.desc-text{
+  color: #111827;
+  font-size: 14px;
+  white-space: pre-wrap;
 }
