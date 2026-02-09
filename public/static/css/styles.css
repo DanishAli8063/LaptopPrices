@@ -365,4 +365,25 @@ a:hover{ text-decoration: none; }
     display: none;
   }
 }
+/* ===== MOBILE: hide generation chip, show > ===== */
+@media (max-width: 575.98px){
+
+  /* Hide the FIRST chip (generation) on mobile */
+  .meta-line .chip:first-child{
+    display: none;
+  }
+
+  /* Bring back the chevron on mobile as ">" */
+  .chev-lg{
+    display: block;          /* override previous hide */
+    font-size: 28px;
+    opacity: 0.7;
+    line-height: 1;
+  }
+
+  /* keep spacing nice */
+  .card-right{
+    gap: 10px;
+  }
+}
 
