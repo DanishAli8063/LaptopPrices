@@ -26,9 +26,7 @@ html, body{
 .bg-app{ background: var(--bg); }
 
 /* Slightly nicer container on large screens */
-.container{
-  max-width: 1200px;
-}
+.container{ max-width: 1200px; }
 
 /* Links */
 a{ color: inherit; }
@@ -116,40 +114,61 @@ a:hover{ text-decoration: none; }
 }
 
 /* =========================
-   PRODUCT PAGE (CAROUSEL)
+   PRODUCT PAGE (CAROUSEL) - NO GLITCH
+   IMPORTANT:
+   - .product-media should be a WRAPPER around .carousel-inner
+   - each slide should be:
+     <div class="carousel-item ...">
+       <div class="slide-bg" style="--bg:url('...')">
+         <img class="product-img" ... />
+       </div>
+     </div>
    ========================= */
 
-/* Make carousel usable + stable height across screens */
+/* Outer wrapper controls height (stable) */
 .product-media{
-  /* Mobile default: nice big view */
   height: 48vh;
   min-height: 320px;
   max-height: 640px;
-
   background: #f9fafb;
   border-radius: var(--radius);
+  position: relative;
 }
 
-/* Ensure carousel fills the container */
+/* Desktop bigger */
+@media (min-width: 768px){
+  .product-media{
+    height: calc(100vh - 220px);
+    min-height: 420px;
+    max-height: 760px;
+  }
+}
+
+/* Ensure inner carousel uses full height */
 .product-media .carousel-inner,
 .product-media .carousel-item{
   height: 100%;
 }
 
-/* Make each slide a "canvas" that can show blur background + centered image */
+/* DO NOT force .carousel-item flex (causes jitter). Keep it normal. */
 .product-media .carousel-item{
   position: relative;
   overflow: hidden;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
 }
 
-/* --- BLUR BACKGROUND FILL ---
-   For this to work perfectly, each carousel-item should have:
-   class="carousel-item slide-bg" and style="--bg:url('...')"
-   (If you already added that earlier, you're good.)
-*/
+/* Slide canvas (flex center) */
+.slide-bg{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+/* Blur background fill (optional but recommended) */
 .slide-bg::before{
   content: "";
   position: absolute;
@@ -162,7 +181,7 @@ a:hover{ text-decoration: none; }
   opacity: 0.28;
 }
 
-/* The actual product image */
+/* Actual image */
 .product-img{
   position: relative;
   z-index: 1;
@@ -174,24 +193,14 @@ a:hover{ text-decoration: none; }
   object-position: center;
 }
 
-/* Mobile: fill nicely (looks best on small screens) */
+/* Mobile: fill nicely */
 @media (max-width: 767.98px){
-  .product-img{
-    object-fit: cover;   /* mobile "good look" */
-  }
+  .product-img{ object-fit: cover; }
 }
 
-/* Tablet/Laptop/Desktop: show full image (no crop) + blur fill */
+/* Tablet/Laptop/Desktop: full visible */
 @media (min-width: 768px){
-  .product-media{
-    height: calc(100vh - 220px);
-    min-height: 420px;
-    max-height: 760px;
-  }
-
-  .product-img{
-    object-fit: contain; /* desktop full visible */
-  }
+  .product-img{ object-fit: contain; }
 }
 
 /* Carousel arrows visible on white theme */
@@ -264,10 +273,5 @@ a:hover{ text-decoration: none; }
 /* =========================
    SMALL POLISH
    ========================= */
-.btn{
-  border-radius: 12px;
-}
-
-.alert{
-  border-radius: 14px;
-}
+.btn{ border-radius: 12px; }
+.alert{ border-radius: 14px; }
