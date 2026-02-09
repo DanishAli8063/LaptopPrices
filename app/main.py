@@ -6,7 +6,6 @@ from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, Query, Request, HTTPException
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi import Query
 
@@ -17,7 +16,7 @@ DATA_FILE = BASE_DIR / "data" / "laptops.json"
 app = FastAPI(title="Laptop Dashboard (JSON-based)")
 
 # Static + Templates
-app.mount("/static", StaticFiles(...), name="static")
+
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 
