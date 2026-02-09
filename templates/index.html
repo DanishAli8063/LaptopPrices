@@ -3,10 +3,24 @@
 
 {% block content %}
 
-  <div class="d-flex flex-column flex-md-row gap-2 align-items-md-end justify-content-between mb-3">
+  <!-- Top header / filter info -->
+  <div class="page-head mb-3">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div>
+        <h4 class="page-title mb-1">Available Laptops</h4>
+        <div class="page-sub">
+          Share links like:
+          <span class="mono">/?min=50&amp;max=60</span>
+          <span class="dot">•</span>
+          <span class="muted">50 means 50,000</span>
+        </div>
+      </div>
 
-
-
+      <!-- OPTIONAL: keep empty for now or add search later -->
+      <div class="page-badge">
+        Total: <span class="fw-bold">{{ items|length }}</span>
+      </div>
+    </div>
   </div>
 
   {% if items|length == 0 %}
@@ -15,21 +29,35 @@
     </div>
   {% endif %}
 
-  <div class="list-group list-group-flush gap-2">
+  <div class="list-group list-group-flush gap-3">
     {% for x in items %}
-      <a class="list-group-item laptop-card" href="/product/{{ x.id }}">
+      <a class="list-group-item laptop-card laptop-card-lg" href="/product/{{ x.id }}">
         <div class="d-flex gap-3 align-items-center">
-          <div class="thumb-wrap">
-            <img class="thumb" src="{{ x.pic_urls[0] }}" alt="{{ x.name }}" />
+          <div class="thumb-wrap thumb-wrap-lg">
+            <img class="thumb" src="{{ x.pic_urls[0] }}" alt="{{ x.name }}" loading="lazy" />
           </div>
 
           <div class="flex-grow-1">
-            <div class="price">Rs {{ "{:,}".format(x.price) }}</div>
-            <div class="name">{{ x.name }}</div>
-            <div class="name">{{ x.generation }}</div>
+            <div class="row g-2 align-items-center">
+              <div class="col-12 col-md-8">
+                <div class="title-line">
+                  <div class="laptop-name">{{ x.name }}</div>
+                </div>
+
+                <div class="meta-line">
+                  <span class="chip">{{ x.generation or "Unknown" }}</span>
+                  <span class="chip chip-soft">{{ x.specs or "Unknown" }}</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4 text-md-end">
+                <div class="price price-lg">Rs {{ "{:,}".format(x.price) }}</div>
+                <div class="muted small">Tap to view details</div>
+              </div>
+            </div>
           </div>
 
-          <div class="chev">›</div>
+          <div class="chev chev-lg">›</div>
         </div>
       </a>
     {% endfor %}
