@@ -2,17 +2,23 @@
   {
     "name": "Stone N186",
     "price": 21000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/50.jpg",
+      "images/49.jpg"
+    ],
     "generation": "i3-4th",
     "specs": "4GB/500GB",
-    "screen_size": "Unknown",
-    "screen_resolution": "Unknown",
+    "screen_size": "15.6",
+    "screen_resolution": "720",
     "cpu_cores": "2"
   },
   {
     "name": "Toshiba R50",
     "price": 21000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/52.jpg",
+      "images/51.jpg"
+    ],
     "generation": "i3-4th",
     "specs": "4GB/500GB",
     "screen_size": "15.6",
@@ -22,17 +28,20 @@
   {
     "name": "Novatech W3C5SN",
     "price": 24000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/54.jpg",
+      "images/53.jpg"
+    ],
     "generation": "i5-4th",
     "specs": "4GB/500GB",
-    "screen_size": "Unknown",
-    "screen_resolution": "Unknown",
+    "screen_size": "15.6",
+    "screen_resolution": "720",
     "cpu_cores": "2"
   },
   {
     "name": "Toshiba C50",
     "price": 24000,
-    "pic": ["images/37.jpg", "images/38.jpg"],
+    "pic": ["images/38.jpg", "images/37.jpg"],
     "generation": "i5-4th",
     "specs": "4GB/500GB",
     "screen_size": "15.6",
@@ -42,7 +51,7 @@
   {
     "name": "HP 250 G4",
     "price": 25000,
-    "pic": ["images/1.jpg", "images/2.jpg"],
+    "pic": ["images/2.jpg", "images/1.jpg"],
     "generation": "i3-5th",
     "specs": "4GB/500GB",
     "screen_size": "15.6",
@@ -52,7 +61,10 @@
   {
     "name": "Lenovo 13",
     "price": 33000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/56.jpg",
+      "images/55.jpg"
+    ],
     "generation": "i3-7th",
     "specs": "8GB/256GB",
     "screen_size": "13.3",
@@ -62,7 +74,7 @@
   {
     "name": "Lenovo L380",
     "price": 33000,
-    "pic": ["images/27.jpg", "images/28.jpg"],
+    "pic": ["images/28.jpg", "images/27.jpg"],
     "generation": "i3-8th",
     "specs": "8GB/128GB",
     "screen_size": "13.3",
@@ -72,7 +84,10 @@
   {
     "name": "Fujitsu A357",
     "price": 35000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/58.jpg",
+      "images/57.jpg"
+    ],
     "generation": "i5-7th",
     "specs": "8GB/128GB",
     "screen_size": "15.6",
@@ -82,7 +97,7 @@
   {
     "name": "Lenovo V130",
     "price": 35000,
-    "pic": ["images/33.jpg", "images/34.jpg"],
+    "pic": ["images/34.jpg", "images/33.jpg"],
     "generation": "i5-7th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -92,7 +107,7 @@
   {
     "name": "MacBook A1466",
     "price": 35000,
-    "pic": ["images/41.jpg", "images/42.jpg"],
+    "pic": ["images/42.jpg", "images/41.jpg"],
     "generation": "i5-5th",
     "specs": "8GB/128GB",
     "screen_size": "13.3",
@@ -102,7 +117,10 @@
   {
     "name": "Lenovo X1 Tab",
     "price": 36000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": [
+      "images/60.jpg",
+      "images/59.jpg"
+    ],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "12.3",
@@ -112,7 +130,7 @@
   {
     "name": "Lenovo X280",
     "price": 37000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/62.jpg", "images/61.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "12.5",
@@ -122,7 +140,7 @@
   {
     "name": "Dell 5580",
     "price": 39000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/64.jpg", "images/63.jpg"],
     "generation": "i5-6th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -132,7 +150,7 @@
   {
     "name": "Lenovo X390",
     "price": 39000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/66.jpg", "images/65.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "13.3",
@@ -142,7 +160,7 @@
   {
     "name": "Dynabook C50",
     "price": 41000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/68.jpg", "images/67.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/128GB",
     "screen_size": "15.6",
@@ -152,7 +170,7 @@
   {
     "name": "Dell 3500",
     "price": 41000,
-    "pic": ["images/5.jpg", "images/6.jpg"],
+    "pic": ["images/6.jpg", "images/5.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -162,7 +180,7 @@
   {
     "name": "Dell 3590",
     "price": 41000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/70.jpg", "images/69.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -172,7 +190,7 @@
   {
     "name": "Lenovo E580",
     "price": 41000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/72.jpg", "images/71.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -182,7 +200,7 @@
   {
     "name": "HP 450 G5",
     "price": 45000,
-    "pic": ["images/9.jpg", "images/10.jpg"],
+    "pic": ["images/10.jpg", "images/9.jpg"],
     "generation": "i5-8th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -192,7 +210,7 @@
   {
     "name": "Dell 5310",
     "price": 46000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/74.jpg", "images/73.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "13.3",
@@ -202,7 +220,7 @@
   {
     "name": "Lenovo L13",
     "price": 46000,
-    "pic": ["images/23.jpg", "images/24.jpg"],
+    "pic": ["images/24.jpg", "images/23.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "13.3",
@@ -212,7 +230,7 @@
   {
     "name": "Lenovo V14",
     "price": 46000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/76.jpg", "images/75.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "14.0",
@@ -222,7 +240,7 @@
   {
     "name": "Lenovo L14",
     "price": 48000,
-    "pic": ["images/21.jpg", "images/22.jpg"],
+    "pic": ["images/22.jpg", "images/21.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "14.0",
@@ -232,7 +250,7 @@
   {
     "name": "Lenovo V15",
     "price": 48000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/77.jpg", "images/78.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -242,7 +260,7 @@
   {
     "name": "Dell 3410",
     "price": 51000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/80.jpg", "images/79.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "14.0",
@@ -252,7 +270,7 @@
   {
     "name": "Dell 5410",
     "price": 51000,
-    "pic": ["images/17.jpg", "images/18.jpg"],
+    "pic": ["images/18.jpg", "images/17.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "14.0",
@@ -260,19 +278,19 @@
     "cpu_cores": "4"
   },
   {
-    "name": "Lenovo L18",
+    "name": "Lenovo L13",
     "price": 52000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/82.jpg", "images/81.jpg"],
     "generation": "i5-11th",
     "specs": "8GB/256GB",
-    "screen_size": "Unknown",
-    "screen_resolution": "Unknown",
+    "screen_size": "13.3",
+    "screen_resolution": "1080",
     "cpu_cores": "4"
   },
   {
     "name": "Dell 3510",
     "price": 53000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/84.jpg", "images/83.jpg"],
     "generation": "i5-10th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -282,7 +300,7 @@
   {
     "name": "Dell 3520",
     "price": 54000,
-    "pic": ["images/47.jpg", "images/48.jpg"],
+    "pic": ["images/48.jpg", "images/47.jpg"],
     "generation": "i5-11th",
     "specs": "8GB/256GB",
     "screen_size": "15.6",
@@ -292,7 +310,7 @@
   {
     "name": "Dell 5420",
     "price": 54000,
-    "pic": ["images/11.jpg", "images/12.jpg"],
+    "pic": ["images/12.jpg", "images/11.jpg"],
     "generation": "i5-11th",
     "specs": "8GB/256GB",
     "screen_size": "14.0",
@@ -302,7 +320,7 @@
   {
     "name": "Dell 7410",
     "price": 56000,
-    "pic": ["images/0.jpg", "images/0.jpg"],
+    "pic": ["images/86.jpg", "images/85.jpg"],
     "generation": "i5-10th",
     "specs": "16GB/256GB",
     "screen_size": "14.0",
